@@ -25,6 +25,12 @@
   "projects": {
     "api": {
       "tags": []
+    },
+    "api-core-data-access": {
+      "tags": ["scope:api", "type:feature"]
+    },
+    "api-core-feature": {
+      "tags": ["scope:api", "type:feature"]
     }
   }
 }
