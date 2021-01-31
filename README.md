@@ -1,6 +1,5 @@
 # Panng
 
-
 ```
 apps/api/
 apps/web/
@@ -11,6 +10,10 @@ libs/api/
         - core
               - data-access (DB Access)
               - feature (GraphQL)
+        - list
+              - data-access (DB Access)
+              - feature (GraphQL)
+
         - user
               - data-access (DB Access)
               - feature (GraphQL)

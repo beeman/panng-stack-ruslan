@@ -16,7 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@panng/api/core/data-access": ["libs/api/core/data-access/src/index.ts"],
-      "@panng/api/core/feature": ["libs/api/core/feature/src/index.ts"]
+      "@panng/api/core/feature": ["libs/api/core/feature/src/index.ts"],
+      "@panng/api/listing/data-access": [
+        "libs/api/listing/data-access/src/index.ts"
+      ],
+      "@panng/api/listing/feature": ["libs/api/listing/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

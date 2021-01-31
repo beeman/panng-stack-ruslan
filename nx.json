@@ -27,9 +27,15 @@
       "tags": []
     },
     "api-core-data-access": {
-      "tags": ["scope:api", "type:feature"]
+      "tags": ["scope:api", "type:data-access"]
     },
     "api-core-feature": {
+      "tags": ["scope:api", "type:feature"]
+    },
+    "api-listing-data-access": {
+      "tags": ["scope:api", "type:data-access"]
+    },
+    "api-listing-feature": {
       "tags": ["scope:api", "type:feature"]
     }
   }

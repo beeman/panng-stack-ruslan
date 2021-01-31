@@ -2,6 +2,26 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Listing {
+  id: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  title: String
+  description: String
+  type: ListingType
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+enum ListingType {
+  Product
+  Service
+}
+
 type Query {
   hello: String
+  listings: [Listing!]
 }
