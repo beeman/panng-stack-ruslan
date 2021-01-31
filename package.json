@@ -3,29 +3,44 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "affected": "nx affected",
+    "affected:apps": "nx affected:apps",
+    "affected:build": "nx affected:build",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected:e2e": "nx affected:e2e",
+    "affected:libs": "nx affected:libs",
+    "affected:lint": "nx affected:lint",
+    "affected:test": "nx affected:test",
+    "build": "nx build",
+    "dep-graph": "nx dep-graph",
+    "e2e": "nx e2e",
+    "format": "nx format:write",
+    "format:check": "nx format:check",
+    "format:write": "nx format:write",
+    "help": "nx help",
+    "lint": "nx workspace-lint && nx lint",
     "nx": "nx",
     "start": "nx serve",
-    "build": "nx build",
     "test": "nx test",
-    "lint": "nx workspace-lint && nx lint",
-    "e2e": "nx e2e",
-    "affected:apps": "nx affected:apps",
-    "affected:libs": "nx affected:libs",
-    "affected:build": "nx affected:build",
-    "affected:e2e": "nx affected:e2e",
-    "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
-    "affected:dep-graph": "nx affected:dep-graph",
-    "affected": "nx affected",
-    "format": "nx format:write",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
     "update": "nx migrate latest",
-    "workspace-generator": "nx workspace-generator",
-    "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "workspace-generator": "nx workspace-generator"
   },
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn format:check"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,less,md,ts,html,graphql}": [
+      "yarn format --uncommitted"
+    ],
+    "nx.json": [
+      "yarn nxpm-stack lint",
+      "yarn format --uncommitted"
+    ]
+  },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
@@ -45,6 +60,7 @@
     "@nrwl/node": "11.2.6",
     "@nrwl/tao": "11.2.6",
     "@nrwl/workspace": "11.2.6",
+    "@nxpm/cli": "^4.11.2",
     "@types/jest": "26.0.8",
     "@types/node": "12.12.38",
     "@typescript-eslint/eslint-plugin": "4.3.0",
@@ -52,7 +68,9 @@
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.0.0",
+    "husky": "^4.3.8",
     "jest": "26.2.2",
+    "lint-staged": "^10.5.3",
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
