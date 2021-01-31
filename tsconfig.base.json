@@ -20,7 +20,10 @@
       "@panng/api/listing/data-access": [
         "libs/api/listing/data-access/src/index.ts"
       ],
-      "@panng/api/listing/feature": ["libs/api/listing/feature/src/index.ts"]
+      "@panng/api/listing/feature": ["libs/api/listing/feature/src/index.ts"],
+      "@panng/web/core/feature": ["libs/web/core/feature/src/index.ts"],
+      "@panng/web/listing/feature": ["libs/web/listing/feature/src/index.ts"],
+      "@panng/web/shell/feature": ["libs/web/shell/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
